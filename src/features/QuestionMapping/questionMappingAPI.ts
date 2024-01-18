@@ -3,6 +3,11 @@ import Question from "../model/Question"
 export function fetchAll(study: string) {
   return new Promise<{ data: Question[] }>((resolve) =>
     setTimeout(() => {
+      fetch("/.auth/me").then(async (result: any): Promise<void> => {
+        const quests = await result.json()
+        console.log(quests)
+      })
+
       fetch(
         "/data-api/rest/InfoQuestion?$select=pkiQID,sQuestionID&$filter=fkiStudyID eq 24",
       ).then(async (result: any): Promise<void> => {
