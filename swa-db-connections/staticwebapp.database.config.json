@@ -59,7 +59,7 @@
       },
       "permissions": [
         {
-          "actions": ["*"],
+          "actions": ["read"],
           "role": "admin"
         }
       ]
