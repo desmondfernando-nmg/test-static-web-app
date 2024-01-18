@@ -12,6 +12,9 @@ export function fetchAll(study: string) {
         "/data-api/rest/InfoQuestion?$select=pkiQID,sQuestionID&$filter=fkiStudyID eq 24",
         {
           method: "GET",
+          headers: {
+            "X-MS-API-ROLE": "admin",
+          },
         },
       ).then(async (result: any): Promise<void> => {
         const quests = await result.json()
