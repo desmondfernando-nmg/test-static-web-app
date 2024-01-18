@@ -4,8 +4,12 @@
     },
     "routes": [
         {
-          "route": "/*",
-          "allowedRoles": ["authenticated"]
+            "route": "/*",
+            "allowedRoles": ["authenticated"]
+        },
+        {
+            "route": "/data-api/*",
+            "allowedRoles": ["authenticated","admin"]
         }
     ],
     "responseOverrides": {
