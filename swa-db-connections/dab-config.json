@@ -1,21 +1,22 @@
 {
-  "$schema": "https://github.com/Azure/data-api-builder/releases/latest/download/dab.draft.schema.json",
+  "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.9.7/dab.draft.schema.json",
   "data-source": {
     "database-type": "mssql",
+    "connection-string": "@env('DATABASE_CONNECTION_STRING')",
     "options": {
-      "set-session-context": false 
-    },
-    "connection-string": "@env('DATABASE_CONNECTION_STRING')"
+      "set-session-context": false
+    }
   },
   "runtime": {
     "rest": {
       "enabled": true,
-      "path": "/rest"
+      "path": "/api",
+      "request-body-strict": true
     },
     "graphql": {
-      "allow-introspection": true,
       "enabled": true,
-      "path": "/graphql"
+      "path": "/graphql",
+      "allow-introspection": true
     },
     "host": {
       "cors": {
@@ -29,22 +30,9 @@
     }
   },
   "entities": {
-    "InsightsStudy": {
-      "source": "dbo.Insights_Study",
-      "permissions": [
-        {
-          "actions": ["read"],
-          "role": "admin"
-        },
-        {
-          "actions": ["update"],
-          "role": "admin"
-        }
-      ]
-    },
     "InfoQuestion": {
       "source": {
-        "object": "dbo.Insights_InfoQuestion",
+        "object": "dbo.Insights_InfoQuestions",
         "type": "table"
       },
       "graphql": {
