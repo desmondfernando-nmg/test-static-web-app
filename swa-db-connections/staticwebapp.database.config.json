@@ -60,7 +60,7 @@
       "permissions": [
         {
           "actions": ["read"],
-          "role": "authenticated"
+          "role": "admin"
         },
         {
           "actions": ["update"],
