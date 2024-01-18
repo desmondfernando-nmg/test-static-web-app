@@ -23,11 +23,7 @@
         "allow-credentials": false
       },
       "authentication": {
-        "provider": "AzureAD",
-        "jwt": {
-          "audience": "d31deb65-ecd4-4313-ba8b-bee91e8099f9",
-          "issuer": "https://login.microsoftonline.com/2d4df158-b488-462b-bdea-d3fdb92824bb/v2.0"
-        }
+        "provider": "StaticWebApps"
       },
       "mode": "production"
     }
