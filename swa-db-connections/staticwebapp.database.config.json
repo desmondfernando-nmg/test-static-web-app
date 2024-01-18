@@ -34,7 +34,7 @@
       "permissions": [
         {
           "actions": ["read"],
-          "role": "anonymous"
+          "role": "authenticated"
         },
         {
           "actions": ["update"],
@@ -59,12 +59,12 @@
       },
       "permissions": [
         {
-          "role": "anonymous",
-          "actions": [
-            {
-              "action": "*"
-            }
-          ]
+          "actions": ["read"],
+          "role": "authenticated"
+        },
+        {
+          "actions": ["update"],
+          "role": "admin"
         }
       ]
     }
